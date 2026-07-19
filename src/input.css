@@ -236,21 +236,26 @@
   .items-grid { @apply grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]; }
   .item-card {
     @apply relative bg-surface border-2 border-ink flex flex-col text-left
-           cursor-pointer p-0 pt-10 font-sans text-ink;
+           cursor-pointer p-0 pt-14 font-sans text-ink;
   }
   .tag-punch {
     @apply absolute top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-paper border-2 border-ink
            flex items-center justify-center;
   }
   .tag-punch span { @apply w-[22px] h-[22px] rounded-full border border-hairline block; }
+  /* Category + lot share one line here, deliberately smaller than the title
+     below — the item name is meant to be the focal point of this card, not
+     the lot number (that was the original Figma concept's emphasis, dialed
+     back per owner feedback). */
   .tag-header {
-    @apply px-6 pb-4 text-center;
+    @apply px-6 pb-3 flex items-center justify-center flex-wrap gap-x-1.5 gap-y-1;
     border-bottom: 4px double theme('colors.hairline');
   }
-  .tag-header .cat { @apply block font-mono text-[11px] uppercase tracking-widest text-ink-soft mb-1.5; }
-  .tag-header .lot { @apply block font-mono text-[32px] font-bold text-ink; }
+  .tag-header .cat { @apply font-mono text-[11px] uppercase tracking-widest text-ink-soft; }
+  .tag-header .lot { @apply font-mono text-[11px] font-bold text-ink; }
+  .tag-header .lot::before { content: '·'; @apply mr-1.5 text-ink-soft; }
   .tag-details { @apply px-6 pt-5 pb-1; }
-  .tag-details .title { @apply font-serif text-xl font-semibold text-center leading-snug m-0 mb-2; }
+  .tag-details .title { @apply font-serif text-2xl font-bold text-center leading-snug m-0 mb-2; }
   .tag-details .desc { @apply font-sans text-[13.5px] text-ink-soft text-center leading-relaxed m-0; }
   .tag-photo { @apply px-6 pt-5; }
   .tag-photo .photo-ph { @apply h-[170px] border-2 border-ink bg-paper-deep p-1.5; }
