@@ -4,6 +4,30 @@ Append-only history: what happened each session, decisions made and why, and wha
 
 ---
 
+## 2026-07-19 — Item card design decided (via Figma Make) and implemented
+**Did:**
+- Owner ran the Figma AI design brief drafted last session and came back with a Figma Make export (a full React/Vite/Tailwind-v4 scaffold — this is a design-prototyping tool output, not something we're adopting as our stack; the actual site stays static HTML/vanilla JS/Tailwind-v3-build as already locked in). The export contained 3 new card concepts, all built around the same brief (huge type, massive tap targets, zero hover reliance): Concept 7 "Perforated Ticket," Concept 8 "Giant Inventory Tag," Concept 9 "Framed Exhibition Placard."
+- Confirmed the Figma-generated color tokens (`paper`/`panel`/`text-main`/`text-muted`/`accent-red`/`accent-brass`/`accent-sage`/`border-main`/`surface`) map cleanly onto our existing palette — the brief's constraint to reuse the locked tokens worked as intended.
+- Owner picked **Concept 8, Giant Inventory Tag**, and confirmed swapping the auction-style button copy ("Bid Now" etc.) for "View details," matching our no-checkout/contact-only model.
+- Ported Concept 8 from the Figma React/JSX into `.item-card` (`src/input.css`) and `buildCard()` (`js/app.js`), replacing the old simple catalog-style placeholder card on `items.html`. Adaptations made during the port (not explicitly asked about, but reasonably called given the constraints already established this project):
+  - **Dropped the sepia/grayscale photo filter** the Figma mockup applied — real listing photos need to show true color/condition for a buyer to judge the item; an aging filter fights that, however nice it looks on stock photos.
+  - **Dropped the separate on-photo lot-number and status badges** used everywhere else — Concept 8 already shows the lot number huge in the header and status in the footer, so repeating them over the photo would be redundant clutter this design doesn't call for.
+  - **Split the single `price` string** (e.g. `"Starting bid $60 for the pair"`) into a small label + big value for the tag's price row, via a `splitPrice()` helper that splits on the first `$` — no `items.json` schema change needed.
+  - **Kept sharp, un-rounded corners** throughout this card, matching Concept 8's printed-tag identity, even though the rest of the site uses soft `rounded-md`/`rounded-sm` — a deliberate departure, not an oversight.
+  - **Kept the existing color-coded status-tag system** (green/amber/grey by status) rather than Concept 8's plain dark pill, since color-coding status is more informative and was already established.
+  - Confirmed this card design correctly participates in the dark/light mode token system built last session with zero extra work — the reactive tokens (`ink`/`surface`/`paper`/`paper-deep`/`hairline`) Figma happened to use are exactly the ones already wired to flip with `.dark`.
+  - `items-grid`'s column minmax bumped 260px→300px to give the richer layout room.
+- Verified: clean `npm run build`, valid `items.json`, all pages still serve 200, spot-checked the compiled CSS to confirm the new card's reactive vs. fixed tokens resolved as intended.
+
+**Decided:**
+- Item card visual style: **Giant Inventory Tag (Concept 8)** — no longer an open decision, implemented live on `items.html`.
+- This card is taller and lower-density than the old placeholder (expected — a direct consequence of the "massive tap target, huge type" brief that was intentionally written for this project's older/rural audience).
+
+**Open / next steps:**
+- The loading skeleton (`.skeleton-card`) wasn't updated to match the new card's taller proportions/sharp corners — cosmetic only (it shows for a fraction of a second on a local JSON fetch), flagged but not fixed; revisit if it looks jarring in practice.
+- Aesthetic exploration (palette/fonts) is still on hold, per the standing agreement — this session only touched the card component itself.
+- Real photos, once sourced, will be the first real test of dropping the sepia filter — worth a look to confirm that call still feels right once actual item photos are in place instead of the plaid placeholder.
+
 ## 2026-07-18 — Dark/light mode + mobile-responsive pass
 **Did:**
 - Before building, confirmed two product decisions with the owner: (1) the site should always start in light mode for every first-time visitor regardless of their device's OS dark-mode setting — only switches if they've actually clicked the toggle before (stored in `localStorage['theme']`); (2) the toggle shows both an icon and a text label ("🌙 Dark" / "☀ Light"), not an icon alone, consistent with the earlier senior-usability framing (nothing should depend on recognizing an icon convention).

@@ -305,20 +305,50 @@ function initItemsPage(items, categories) {
     });
   }
 
+  // item.price is one string like "Starting bid $45" or "Starting bid $60 for
+  // the pair" — split it into a small label and a big value for the tag's
+  // price row, rather than adding a separate field to items.json.
+  function splitPrice(price) {
+    const i = price.indexOf('$');
+    if (i === -1) return { label: '', value: price };
+    return { label: price.slice(0, i).trim(), value: price.slice(i).trim() };
+  }
+
   function buildCard(item) {
     const card = el('button', 'item-card');
     card.type = 'button';
     card.setAttribute('aria-haspopup', 'dialog');
-    const photo = photoBlock(item.photos && item.photos[0], item.title,
-      `<span class="lot-badge">LOT ${item.lot}</span><span class="card-status status-tag status-${item.status}">${statusLabel(item.status)}</span>`);
-    card.appendChild(photo);
-    const content = el('div', 'content', `
+
+    card.appendChild(el('div', 'tag-punch', '<span></span>'));
+
+    card.appendChild(el('div', 'tag-header', `
       <span class="cat">${item.category}</span>
+      <span class="lot">LOT ${item.lot}</span>
+    `));
+
+    card.appendChild(el('div', 'tag-details', `
       <p class="title">${item.title}</p>
       <p class="desc">${item.shortDescription}</p>
-      <span class="price">${item.price}</span>
-    `);
-    card.appendChild(content);
+    `));
+
+    const photoWrap = el('div', 'tag-photo');
+    photoWrap.appendChild(photoBlock(item.photos && item.photos[0], item.title));
+    card.appendChild(photoWrap);
+
+    const { label, value } = splitPrice(item.price);
+    const footer = el('div', 'tag-footer');
+    footer.innerHTML = `
+      <div class="tag-price-row">
+        <span class="price-label">${label}</span>
+        <span class="price-value">${value}</span>
+      </div>
+      <div class="tag-actions">
+        <span class="status-tag status-${item.status}">${statusLabel(item.status)}</span>
+        <span class="btn-view">View details</span>
+      </div>
+    `;
+    card.appendChild(footer);
+
     card.addEventListener('click', () => openModal(item, card));
     return card;
   }

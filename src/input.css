@@ -226,22 +226,48 @@
     @apply absolute left-3.5 top-1/2 -translate-y-1/2 text-ink-soft text-sm pointer-events-none;
   }
 
-  /* ---- Items grid ---- */
-  .items-grid { @apply grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(260px,1fr))]; }
+  /* ---- Items grid: "Giant Inventory Tag" card ----
+     Chosen from the Figma exploration round (Concept 8) — a vertical
+     shipping-tag metaphor: hole punch, huge lot number read first,
+     photo inset in the middle, price/status/action stacked in a footer
+     band. Deliberately sharp-cornered (no rounded-*) — that's part of
+     the printed-tag identity the design is going for, unlike the softer
+     rounded-md used elsewhere on the site. */
+  .items-grid { @apply grid gap-6 [grid-template-columns:repeat(auto-fit,minmax(300px,1fr))]; }
   .item-card {
-    @apply bg-surface border border-hairline rounded-md overflow-hidden flex flex-col text-left
-           cursor-pointer p-0 font-sans text-ink hover:border-barn;
+    @apply relative bg-surface border-2 border-ink flex flex-col text-left
+           cursor-pointer p-0 pt-10 font-sans text-ink;
   }
-  .item-card .photo-ph { @apply h-[190px]; }
-  .item-card .lot-badge {
-    @apply absolute top-2.5 left-2.5 z-[2] bg-midnight text-cream font-mono text-[11px] font-semibold px-2 py-[3px] rounded-sm;
+  .tag-punch {
+    @apply absolute top-4 left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-paper border-2 border-ink
+           flex items-center justify-center;
   }
-  .item-card .card-status { @apply absolute top-2.5 right-2.5 z-[2]; }
-  .item-card .content { @apply px-[18px] pt-4 pb-[18px] flex flex-col gap-1.5 flex-1; }
-  .item-card .cat { @apply font-mono text-[11px] uppercase tracking-wide text-barn font-semibold; }
-  .item-card .title { @apply font-serif text-lg font-semibold m-0; }
-  .item-card .desc { @apply text-[13.5px] text-ink-soft leading-relaxed flex-1; }
-  .item-card .price { @apply font-mono text-[13px] font-semibold mt-1.5; }
+  .tag-punch span { @apply w-[22px] h-[22px] rounded-full border border-hairline block; }
+  .tag-header {
+    @apply px-6 pb-4 text-center;
+    border-bottom: 4px double theme('colors.hairline');
+  }
+  .tag-header .cat { @apply block font-mono text-[11px] uppercase tracking-widest text-ink-soft mb-1.5; }
+  .tag-header .lot { @apply block font-mono text-[32px] font-bold text-ink; }
+  .tag-details { @apply px-6 pt-5 pb-1; }
+  .tag-details .title { @apply font-serif text-xl font-semibold text-center leading-snug m-0 mb-2; }
+  .tag-details .desc { @apply font-sans text-[13.5px] text-ink-soft text-center leading-relaxed m-0; }
+  .tag-photo { @apply px-6 pt-5; }
+  .tag-photo .photo-ph { @apply h-[170px] border-2 border-ink bg-paper-deep p-1.5; }
+  .tag-footer { @apply bg-paper-deep border-t-2 border-ink mt-5 p-6 flex flex-col gap-3.5; }
+  .tag-price-row {
+    @apply flex justify-between items-end pb-3.5;
+    border-bottom: 2px solid theme('colors.hairline');
+  }
+  .tag-price-row .price-label { @apply font-sans text-xs font-bold uppercase tracking-wide text-ink-soft; }
+  .tag-price-row .price-value { @apply font-mono text-2xl font-bold text-ink; }
+  .tag-actions { @apply flex gap-3; }
+  .tag-actions .status-tag { @apply flex-1 flex items-center justify-center py-2.5 text-[11px] rounded-none; }
+  .tag-actions .btn-view {
+    @apply flex-1 flex items-center justify-center bg-surface border-2 border-ink text-ink
+           font-sans font-bold text-sm uppercase tracking-wide py-2.5 px-3 text-center;
+  }
+  .item-card:hover .btn-view { @apply bg-ink text-surface; }
 
   /* ---- Loading skeleton ---- */
   .skeleton-card { @apply bg-surface border border-hairline rounded-md overflow-hidden animate-pulse; }
