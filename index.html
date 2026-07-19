@@ -6,24 +6,30 @@
 <title>Kansas Estate Sale — Browse Items</title>
 <meta name="description" content="Browse photos and details for an upcoming Kansas estate sale: antiques, household goods, farm equipment, tools, and machinery, ahead of a local auction.">
 <link rel="stylesheet" href="css/style.css">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');}}catch(e){}</script>
 </head>
 <body>
 
   <header class="site-header">
     <div class="nav-row">
       <a href="index.html" class="brand"><span class="brand-mark">LOT</span> Kansas Estate Sale</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
-      <nav class="main-nav" id="main-nav">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="items.html">Browse Items</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+      <div class="nav-actions">
+        <nav class="main-nav" id="main-nav">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="items.html">Browse Items</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button type="button" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">
+          <span class="icon" aria-hidden="true">🌙</span><span class="label">Dark</span>
+        </button>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      </div>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="eyebrow">Estate Sale · Iola, Kansas area</div>
+      <div class="eyebrow">Estate Sale · Fredonia, Kansas area</div>
       <h1>Everything's going, one lot at a time.</h1>
       <p>We're clearing out a household full of antiques, farm equipment, tools, and everyday goods before the collection heads to a local auction house. Browse photos and details here, then reach out or find us on Marketplace, Nextdoor, and OfferUp.</p>
       <div class="hero-ctas">
@@ -67,7 +73,7 @@
 
     <section class="section">
       <div class="wrap about-block">
-        <p>This site is a photo-and-description reference only — there's no checkout or account here. If something catches your eye, use the contact page, or look for the same lot number on our Facebook Marketplace, Nextdoor, or OfferUp listing to message us directly.</p>
+        <p>This site is a photo, price and description reference only. If something catches your eye, use the contact page, or look for the same lot number on our Facebook Marketplace, Nextdoor, or OfferUp listing to message us directly.</p>
       </div>
     </section>
   </main>
@@ -84,6 +90,7 @@
         <h4>Categories</h4>
         <a href="items.html?category=Antiques">Antiques</a>
         <a href="items.html?category=Household">Household</a>
+        <a href="items.html?category=Crafts">Crafts</a>
         <a href="items.html?category=Farm">Farm</a>
         <a href="items.html?category=Construction%20%26%20Tools">Construction &amp; Tools</a>
         <a href="items.html?category=Machinery">Machinery</a>
@@ -94,8 +101,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© <span data-year></span> Kansas Estate Sale</span>
-      <span>No accounts, no tracking, no data collected here.</span>
+      <span><span data-year></span> Kansas Estate Sale</span>
     </div>
   </footer>
 

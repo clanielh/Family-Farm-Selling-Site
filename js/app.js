@@ -83,6 +83,40 @@ function initChrome() {
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
+
+  initThemeToggle();
+}
+
+/* ---------- light/dark toggle (every page) ----------
+   Defaults to light for every first-time visitor, regardless of the
+   device's own dark-mode setting — only a visit where someone has
+   actually clicked the toggle before switches it. The <html> class is
+   also set by a tiny inline script in <head> (before this file loads)
+   so there's no flash of light-then-dark on page load. */
+
+const THEME_KEY = 'theme';
+
+function initThemeToggle() {
+  const btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+
+  const icon = btn.querySelector('.icon');
+  const label = btn.querySelector('.label');
+
+  function render(isDark) {
+    icon.textContent = isDark ? '☀' : '🌙';
+    label.textContent = isDark ? 'Light' : 'Dark';
+    btn.setAttribute('aria-pressed', String(isDark));
+    btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+  }
+
+  render(document.documentElement.classList.contains('dark'));
+
+  btn.addEventListener('click', () => {
+    const isDark = document.documentElement.classList.toggle('dark');
+    try { localStorage.setItem(THEME_KEY, isDark ? 'dark' : 'light'); } catch (e) { /* private browsing, etc. — theme just won't persist */ }
+    render(isDark);
+  });
 }
 
 /* ---------- accordion (contact.html FAQ) ---------- */
