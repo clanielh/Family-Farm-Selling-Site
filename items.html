@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Items — Kansas Estate Sale</title>
+<meta name="description" content="Browse every lot in the Kansas estate sale by category: antiques, household goods, farm equipment, construction tools, and machinery.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="nav-row">
+      <a href="index.html" class="brand"><span class="brand-mark">LOT</span> Kansas Estate Sale</a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+      <nav class="main-nav" id="main-nav">
+        <a href="index.html">Home</a>
+        <a href="items.html" aria-current="page">Browse Items</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-bottom:0;">
+      <div class="wrap">
+        <div class="section-title" style="margin-bottom:28px;">
+          <div class="kicker">All lots</div>
+          <h2>Browse items</h2>
+          <p>
+            Tap a category to filter, or tap any item for full photos and details. New to auction terms? Hover
+            <span class="has-tooltip" tabindex="0">lot number<span class="tooltip-bubble" role="tooltip">Each item's ID — mention it when you contact us so we know exactly which piece you mean.</span></span>
+            and
+            <span class="has-tooltip" tabindex="0">starting bid<span class="tooltip-bubble" role="tooltip">The lowest opening price for that item — not a fixed price, bidding starts there.</span></span>
+            for a quick explanation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="wrap">
+        <div class="filter-bar">
+          <div class="flex flex-wrap gap-2 flex-1" data-filter-bar></div>
+          <div class="search-field">
+            <span class="icon" aria-hidden="true">⚲</span>
+            <label for="item-search" class="visually-hidden">Search items</label>
+            <input type="search" id="item-search" data-search-input placeholder="Search by name, e.g. &quot;table saw&quot;">
+          </div>
+        </div>
+        <div class="items-grid" data-items-grid></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div>
+        <h4>Site</h4>
+        <a href="index.html">Home</a>
+        <a href="items.html">Browse Items</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div>
+        <h4>Categories</h4>
+        <a href="items.html?category=Antiques">Antiques</a>
+        <a href="items.html?category=Household">Household</a>
+        <a href="items.html?category=Farm">Farm</a>
+        <a href="items.html?category=Construction%20%26%20Tools">Construction &amp; Tools</a>
+        <a href="items.html?category=Machinery">Machinery</a>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p>See the <a href="contact.html">contact page</a> for the fastest way to reach us, or find this sale's lots cross-posted on Facebook Marketplace, Nextdoor, and OfferUp.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year></span> Kansas Estate Sale</span>
+      <span>No accounts, no tracking, no data collected here.</span>
+    </div>
+  </footer>
+
+  <div class="modal-overlay" data-modal hidden></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

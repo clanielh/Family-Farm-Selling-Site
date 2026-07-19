@@ -1,0 +1,330 @@
+{
+  "_readme": "Starter data file for the estate sale site. Each object in 'items' is one listing. Add a new item by copying an existing block and changing the values. 'photos' is a list of filenames — drop the actual image files in an /images folder and reference them here. Delete this _readme key before going live if you want, it's ignored by the site.",
+
+  "categories": [
+    "Antiques",
+    "Household",
+    "Farm",
+    "Construction & Tools",
+    "Machinery"
+  ],
+
+  "statusOptions": ["available", "pending", "sold"],
+
+  "items": [
+    {
+      "id": "001",
+      "lot": "A-01",
+      "title": "Oak Farmhouse Quilt Chest",
+      "category": "Antiques",
+      "status": "available",
+      "shortDescription": "Solid oak blanket chest with dovetail joints and original iron hardware.",
+      "description": "Antique dovetailed oak chest, likely early 1900s. Original iron strap hinges and lock (no key). Some surface wear consistent with age, no structural damage. Great as a coffee table or entry bench.",
+      "notes": "Minor scuffing on lid, one hinge slightly loose but functional.",
+      "dimensions": "38\" W x 18\" D x 22\" H",
+      "condition": "Good — age-appropriate wear",
+      "price": "Starting bid $45",
+      "photos": [
+        "images/001-chest-front.jpg",
+        "images/001-chest-open.jpg",
+        "images/001-chest-hardware.jpg"
+      ],
+      "tags": ["wood", "storage", "farmhouse"]
+    },
+    {
+      "id": "002",
+      "lot": "C-04",
+      "title": "Craftsman 10\" Table Saw",
+      "category": "Construction & Tools",
+      "status": "available",
+      "shortDescription": "Bench-style table saw, runs great, includes rip fence and miter gauge.",
+      "description": "Craftsman 10-inch table saw, single phase, tested and running. Comes with rip fence, miter gauge, and a spare blade. Well maintained, stored indoors.",
+      "notes": "Cord shows some wear near the plug — recommend inspecting before heavy use.",
+      "dimensions": "27\" W x 20\" D x 34\" H",
+      "condition": "Used — fully functional",
+      "price": "Starting bid $85",
+      "photos": [
+        "images/002-tablesaw-main.jpg",
+        "images/002-tablesaw-blade.jpg"
+      ],
+      "tags": ["power tool", "woodworking", "shop"]
+    },
+    {
+      "id": "003",
+      "lot": "F-02",
+      "title": "Cast Iron Wagon Wheel (Pair)",
+      "category": "Farm",
+      "status": "available",
+      "shortDescription": "Matched pair of steel-banded wagon wheels, great as yard or barn decor.",
+      "description": "Set of two matching wooden wagon wheels with steel bands, salvaged from an old farm implement. Structurally solid, some weathering and paint loss. Popular as garden or porch decor.",
+      "notes": "Sold as a pair only.",
+      "dimensions": "42\" diameter each",
+      "condition": "Weathered, structurally sound",
+      "price": "Starting bid $60 for the pair",
+      "photos": [
+        "images/003-wheels-pair.jpg",
+        "images/003-wheels-detail.jpg"
+      ],
+      "tags": ["farm decor", "salvage", "iron"]
+    },
+    {
+      "id": "004",
+      "lot": "H-11",
+      "title": "Vintage Milk Glass Lot",
+      "category": "Household",
+      "status": "pending",
+      "shortDescription": "Box lot of ~12 pieces of milk glass — vases, bowls, and candy dishes.",
+      "description": "Mixed lot of milk glass, roughly a dozen pieces including vases, bowls, and a hobnail candy dish. No major chips found, some pieces unmarked.",
+      "notes": "Sold as one lot, not individually.",
+      "dimensions": "Varies by piece",
+      "condition": "Good, minor wear",
+      "price": "Starting bid $20 for the lot",
+      "photos": [
+        "images/004-milkglass-group.jpg"
+      ],
+      "tags": ["glassware", "decor", "box lot"]
+    },
+    {
+      "id": "005",
+      "lot": "M-01",
+      "title": "PTO-Driven Wood Chipper",
+      "category": "Machinery",
+      "status": "available",
+      "shortDescription": "Tractor PTO wood chipper, mechanically sound, minor rust on frame.",
+      "description": "PTO-driven wood chipper for tractor hookup. Blades sharp, feed chute intact, was running before storage. Frame shows surface rust but no structural rot.",
+      "notes": "Has not been started in approximately 2 years — recommend service before use.",
+      "dimensions": "60\" L x 30\" W x 48\" H",
+      "condition": "As-is, mechanically sound at last use",
+      "price": "Starting bid $150",
+      "photos": [
+        "images/005-chipper-side.jpg",
+        "images/005-chipper-chute.jpg"
+      ],
+      "tags": ["farm equipment", "PTO", "as-is"]
+    },
+    {
+      "id": "006",
+      "lot": "A-02",
+      "title": "Antique Mantel Clock",
+      "category": "Antiques",
+      "status": "available",
+      "shortDescription": "Wind-up mantel clock with chime, in a wood case.",
+      "description": "Vintage 8-day wind-up mantel clock with brass accents and a Westminster chime. Wood case shows some finish wear but the movement runs and keeps reasonable time.",
+      "notes": "Key included; needs occasional winding, not battery operated.",
+      "dimensions": "14\" W x 6\" D x 10\" H",
+      "condition": "Good — running condition, cosmetic wear",
+      "price": "Starting bid $35",
+      "photos": [
+        "images/006-clock-front.jpg",
+        "images/006-clock-side.jpg"
+      ],
+      "tags": ["clock", "antique", "wood"]
+    },
+    {
+      "id": "007",
+      "lot": "A-03",
+      "title": "Cast Iron Wall Key Rack",
+      "category": "Antiques",
+      "status": "available",
+      "shortDescription": "Wall-mount cast iron key/hook rack with decorative scrollwork.",
+      "description": "Small cast iron wall rack with five hooks and scroll detailing, useful for keys or small tools by the door. Original black finish with light surface rust.",
+      "notes": "Mounting screws not included.",
+      "dimensions": "10\" W x 2\" D x 5\" H",
+      "condition": "Good — light surface rust",
+      "price": "Starting bid $12",
+      "photos": [
+        "images/007-keyrack.jpg"
+      ],
+      "tags": ["iron", "wall decor", "entryway"]
+    },
+    {
+      "id": "008",
+      "lot": "H-12",
+      "title": "Kenmore Wringer Washer",
+      "category": "Household",
+      "status": "available",
+      "shortDescription": "Vintage Kenmore wringer-style washing machine, for display or restoration.",
+      "description": "Older Kenmore wringer washer, likely mid-20th century. Motor turns freely but has not been tested under load — being sold as a display/restoration piece rather than a working appliance.",
+      "notes": "Sold as-is; not tested for operation.",
+      "dimensions": "24\" W x 24\" D x 36\" H",
+      "condition": "As-is, untested",
+      "price": "Starting bid $25",
+      "photos": [
+        "images/008-washer.jpg"
+      ],
+      "tags": ["appliance", "vintage", "kenmore"]
+    },
+    {
+      "id": "009",
+      "lot": "H-13",
+      "title": "Corning Ware Casserole Set",
+      "category": "Household",
+      "status": "available",
+      "shortDescription": "Set of 4 Corning Ware casserole dishes with lids, classic blue cornflower pattern.",
+      "description": "Four-piece Corning Ware casserole set in the classic blue cornflower design, various sizes with matching glass lids. No chips or cracks found.",
+      "notes": "One lid has a small hairline scratch, does not affect use.",
+      "dimensions": "Varies by piece",
+      "condition": "Good, no chips or cracks",
+      "price": "Starting bid $18 for the set",
+      "photos": [
+        "images/009-corningware.jpg"
+      ],
+      "tags": ["kitchenware", "glassware", "vintage"]
+    },
+    {
+      "id": "010",
+      "lot": "H-14",
+      "title": "Wicker Patio Chair Set",
+      "category": "Household",
+      "status": "available",
+      "shortDescription": "Pair of wicker patio chairs with cushions.",
+      "description": "Two matching wicker-style patio chairs with weather-resistant cushions, used on a covered porch. Frames are sturdy, some wicker wear on the arms.",
+      "notes": "Cushions can be washed; minor fading from sun exposure.",
+      "dimensions": "28\" W x 30\" D x 34\" H each",
+      "condition": "Good, some wear on wicker arms",
+      "price": "Starting bid $40 for the pair",
+      "photos": [
+        "images/010-wickerchairs.jpg"
+      ],
+      "tags": ["patio", "outdoor", "furniture"]
+    },
+    {
+      "id": "011",
+      "lot": "H-15",
+      "title": "10-Gallon Glass Aquarium Setup",
+      "category": "Household",
+      "status": "available",
+      "shortDescription": "10-gallon glass aquarium with hood, light, and filter.",
+      "description": "Standard 10-gallon glass aquarium tank including hood, light fixture, and a hang-on-back filter. No leaks noted when last filled; sold empty and clean.",
+      "notes": "Filter cartridge not included; heater not included.",
+      "dimensions": "20\" W x 10\" D x 12\" H",
+      "condition": "Good, no visible leaks",
+      "price": "Starting bid $15",
+      "photos": [
+        "images/011-aquarium.jpg"
+      ],
+      "tags": ["aquarium", "glass", "pet supplies"]
+    },
+    {
+      "id": "012",
+      "lot": "H-16",
+      "title": "Singer Sewing Machine in Cabinet",
+      "category": "Household",
+      "status": "available",
+      "shortDescription": "Singer sewing machine built into its original wood cabinet.",
+      "description": "Vintage Singer sewing machine mounted in its matching wood cabinet, which folds closed for storage. Machine turns over by hand; motor and foot pedal included but not tested.",
+      "notes": "Sold as-is; recommend servicing before regular use.",
+      "dimensions": "34\" W x 18\" D x 30\" H (cabinet closed)",
+      "condition": "As-is, untested motor",
+      "price": "Starting bid $50",
+      "photos": [
+        "images/012-singer-cabinet.jpg",
+        "images/012-singer-machine.jpg"
+      ],
+      "tags": ["sewing", "antique", "furniture"]
+    },
+    {
+      "id": "013",
+      "lot": "H-17",
+      "title": "Boy's Huffy Bicycle",
+      "category": "Household",
+      "status": "available",
+      "shortDescription": "Kids' Huffy bicycle, good condition, ready to ride.",
+      "description": "Boy's Huffy bicycle, roughly a youth/teen size, with working brakes and gears. Tires hold air, chain is in good shape.",
+      "notes": "Some scuffs on the frame from normal use.",
+      "dimensions": "Fits riders approx. 4'6\"–5'4\"",
+      "condition": "Good, ready to ride",
+      "price": "Starting bid $20",
+      "photos": [
+        "images/013-bicycle.jpg"
+      ],
+      "tags": ["bicycle", "kids", "outdoor"]
+    },
+    {
+      "id": "014",
+      "lot": "C-05",
+      "title": "Craftsman Rolling Tool Chest",
+      "category": "Construction & Tools",
+      "status": "available",
+      "shortDescription": "Craftsman rolling tool chest with multiple drawers, empty.",
+      "description": "Red Craftsman rolling tool chest/cabinet combo with ball-bearing drawer slides. Drawers are empty — being sold as storage, not with tools included. Casters roll smoothly.",
+      "notes": "One drawer handle is slightly bent but functions fine.",
+      "dimensions": "26\" W x 18\" D x 42\" H",
+      "condition": "Good — functional, empty",
+      "price": "Starting bid $65",
+      "photos": [
+        "images/014-toolchest-closed.jpg",
+        "images/014-toolchest-open.jpg"
+      ],
+      "tags": ["tool storage", "craftsman", "shop"]
+    },
+    {
+      "id": "015",
+      "lot": "C-06",
+      "title": "Corded Belt Sander",
+      "category": "Construction & Tools",
+      "status": "available",
+      "shortDescription": "3-inch corded belt sander, tested and working.",
+      "description": "Standard 3-inch corded belt sander, plugged in and tested — runs smoothly with no unusual noise. Comes with one sanding belt installed.",
+      "notes": "Cord is in good condition, no exposed wire.",
+      "dimensions": "11\" L x 3\" W x 6\" H",
+      "condition": "Used — fully functional",
+      "price": "Starting bid $18",
+      "photos": [
+        "images/015-beltsander.jpg"
+      ],
+      "tags": ["power tool", "shop", "sander"]
+    },
+    {
+      "id": "016",
+      "lot": "F-03",
+      "title": "Vintage Farm Windmill Weight",
+      "category": "Farm",
+      "status": "available",
+      "shortDescription": "Cast iron farm windmill weight, collectible display piece.",
+      "description": "Cast iron counterweight salvaged from an old farm windmill. Popular as a mantel or shelf display piece for collectors of farm antiques. Original casting marks still visible.",
+      "notes": "Heavy — plan for two people to lift.",
+      "dimensions": "8\" diameter x 4\" thick",
+      "condition": "Good, some surface rust typical of age",
+      "price": "Starting bid $30",
+      "photos": [
+        "images/016-windmillweight.jpg"
+      ],
+      "tags": ["farm decor", "cast iron", "collectible"]
+    },
+    {
+      "id": "017",
+      "lot": "M-02",
+      "title": "Craftsman Wet/Dry Shop Vacuum",
+      "category": "Machinery",
+      "status": "available",
+      "shortDescription": "Craftsman shop vacuum, tested and running, includes hose and attachments.",
+      "description": "Craftsman wet/dry shop vacuum, tank tested and motor runs strong. Comes with the main hose and two attachment nozzles.",
+      "notes": "Filter is original and could use replacing for best suction.",
+      "dimensions": "16\" diameter x 24\" H",
+      "condition": "Used — fully functional",
+      "price": "Starting bid $30",
+      "photos": [
+        "images/017-shopvac.jpg"
+      ],
+      "tags": ["shop vac", "craftsman", "cleaning"]
+    },
+    {
+      "id": "018",
+      "lot": "M-03",
+      "title": "5HP Gas-Powered Log Splitter",
+      "category": "Machinery",
+      "status": "pending",
+      "shortDescription": "Gas-powered log splitter, 5HP engine, starts and runs.",
+      "description": "5HP gas engine log splitter mounted on a wheeled frame for easy positioning. Engine starts within a couple pulls and the hydraulic ram operates smoothly.",
+      "notes": "Hydraulic fluid was topped off recently; recommend checking level before use.",
+      "dimensions": "60\" L x 24\" W x 30\" H",
+      "condition": "Used — fully functional",
+      "price": "Starting bid $175",
+      "photos": [
+        "images/018-logsplitter.jpg"
+      ],
+      "tags": ["farm equipment", "gas powered", "splitter"]
+    }
+  ]
+}
